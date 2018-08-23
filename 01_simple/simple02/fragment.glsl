@@ -1,11 +1,11 @@
 uniform sampler2D sampleTexture;
-uniform int sampleTextureSize;
-uniform int displaySize;
+uniform int textureSize;
+uniform int windowSize;
 
 void main() {
-  vec4 smpColor = texture2D(
+  vec4 tColor = texture2D(
     sampleTexture,
-    (floor(gl_FragCoord.xy * sampleTextureSize / displaySize) + 0.5) / sampleTextureSize
+    (floor(gl_FragCoord.xy * textureSize / windowSize) + 0.5) / textureSize
   );
-  gl_FragColor = smpColor;
+  gl_FragColor = tColor;
 }

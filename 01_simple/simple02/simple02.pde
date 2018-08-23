@@ -4,10 +4,10 @@ PImage IMAGE;
 void setup() {
   size(1000, 1000, P2D);
   SHADER = loadShader("fragment.glsl", "vertex.glsl");
-  int sampleTextureSize = 10;
-  IMAGE = createImage(sampleTextureSize, sampleTextureSize, RGB);
-  SHADER.set("sampleTextureSize", sampleTextureSize);
-  SHADER.set("displaySize", width);
+  int textureSize = 10;
+  IMAGE = createImage(textureSize, textureSize, RGB);
+  SHADER.set("textureSize", textureSize);
+  SHADER.set("windowSize", width);
 }
 
 void draw() {
