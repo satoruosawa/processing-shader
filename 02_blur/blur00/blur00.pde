@@ -2,14 +2,14 @@ PShader SHADER;
 PGraphics P_GRAPHICS;
 
 void setup() {
-  size(1000, 1000, P2D);
+  size(800, 1000, P2D);
   P_GRAPHICS = createGraphics(width, height, P2D);
   P_GRAPHICS.beginDraw();
   P_GRAPHICS.background(255);
   P_GRAPHICS.endDraw();
   P_GRAPHICS.rectMode(CENTER);
   SHADER = loadShader("fragment.glsl", "vertex.glsl");
-  SHADER.set("windowSize", width);
+  SHADER.set("windowSize", new PVector(width, height, 0));
 }
 
 void draw() {
