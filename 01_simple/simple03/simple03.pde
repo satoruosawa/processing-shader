@@ -2,10 +2,10 @@ PShader SHADER;
 PGraphics PG;
 
 void setup() {
-  size(1000, 1000, P2D);
+  size(1080, 1080, P2D);
   background(255);
   SHADER = loadShader("fragment.glsl");
-  SHADER.set("textureSize", new PVector(width, height, 0));
+  SHADER.set("textureSize", new PVector(width, height));
 }
 
 void draw() {
