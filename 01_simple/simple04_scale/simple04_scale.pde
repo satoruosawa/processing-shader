@@ -1,12 +1,14 @@
 PShader SHADER;
 PImage IMAGE;
 
+PVector TEXTURE_SIZE;
+
 void setup() {
   size(1080, 1080, P2D);
-  PVector textureSize = new PVector(10, 20);
-  SHADER = loadShader("fragment.glsl");
-  IMAGE = createImage((int)textureSize.x, (int)textureSize.y, RGB);
-  SHADER.set("textureSize", textureSize);
+  TEXTURE_SIZE = new PVector(10, 20);
+  SHADER = loadShader("fragment.glsl", "vertex.glsl");
+  IMAGE = createImage((int)TEXTURE_SIZE.x, (int)TEXTURE_SIZE.y, RGB);
+  SHADER.set("textureSize", TEXTURE_SIZE);
   SHADER.set("windowSize", new PVector(width, height));
 }
 
@@ -16,5 +18,5 @@ void draw() {
   IMAGE.updatePixels();
   SHADER.set("sampleTexture", IMAGE);
   shader(SHADER);
-  rect(0, 0, width, height);
+  rect(0, 0, TEXTURE_SIZE.x, TEXTURE_SIZE.y);
 }
