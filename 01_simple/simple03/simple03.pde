@@ -9,10 +9,14 @@ void setup() {
 }
 
 void draw() {
-  noStroke();
   background(255);
+  noStroke();
   fill(0);
-  rect(100, 100, 100, 100);
+  rect(1, 1, 100, 100);
+  rect(width - 101, 1, 100, 100);
+  rect(1, height - 101, 100, 100);
+  rect(width - 101, height - 101, 100, 100);
+  rect(mouseX, mouseY, 100, 100);
   SHADER.set("sampleTexture", get());
   shader(SHADER); {
     rect(0, 0, width, height);
