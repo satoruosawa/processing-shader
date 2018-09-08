@@ -9,7 +9,7 @@ uniform vec3 textureSize;
 void main() {
   vec4 tColor = texture2D(
     sampleTexture,
-    vec2 (gl_FragCoord.x / textureSize.x, 1.0 - gl_FragCoord.y / textureSize.y)
+    vec2(gl_FragCoord.x / textureSize.x, 1.0 - gl_FragCoord.y / textureSize.y)
   );
   if (tColor.x == 0) {
     tColor = vec4(1, 0, 0, 1);
