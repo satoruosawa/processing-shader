@@ -2,7 +2,7 @@ PShader V_BLUR;
 PShader H_BLUR;
 
 void setup() {
-  size(1000, 1000, P2D);
+  size(1080, 1080, P2D);
   background(255);
   V_BLUR = loadShader("fragment.glsl");
   V_BLUR.set("textureSize", new PVector(width, height));
