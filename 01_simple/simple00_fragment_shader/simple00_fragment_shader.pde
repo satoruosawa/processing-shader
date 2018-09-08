@@ -1,7 +1,7 @@
 PShader SHADER;
 
 void setup() {
-  size(1000, 1000, P2D);
+  size(1080, 1080, P2D);
   SHADER = loadShader("fragment.glsl");
 }
 
